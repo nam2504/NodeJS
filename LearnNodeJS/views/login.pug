@@ -1,0 +1,21 @@
+include layout
+block content
+    form(method='POST' action="/login")
+        table(style='width:0%', border=0)
+            tr
+                th
+                    label Name:
+                th
+                    input#name.form-control(type='text', placeholder='your account' name='user' value=user)
+            tr
+                th
+                    label Password:
+                th
+                    input#pw.form-control(type='password' name='password')
+            tr
+                th(colspan=2)
+                    button.btn.btn-primary(type='submit') Login
+            if (message)
+                tr
+                    th(colspan=2)
+                        p.red=message
