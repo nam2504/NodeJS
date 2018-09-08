@@ -3,7 +3,7 @@ var pool = mysql.createPool({
     connectionLimit: 100, //important
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '123456',
     database: 'world',
     debug: false
 });
@@ -11,12 +11,12 @@ var pool = mysql.createPool({
 function query(sql, params, callback) {
     pool.getConnection(function (err, connection) {
         if (err) {
-            connection.release();
+            if (connection !== undefined) connection.release();
             console.log(err);
             callback(null, err);
         } else {
             connection.query(sql, params, function (err, rows) {
-                connection.release();
+                if (connection !== undefined) connection.release();
                 if (err) {
                     callback(null, err)
                 } else {
@@ -27,4 +27,4 @@ function query(sql, params, callback) {
     });
 }
 
-module.exports = query;
+module.exports.query = query;
