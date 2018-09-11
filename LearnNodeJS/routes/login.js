@@ -3,6 +3,10 @@ var router = express.Router();
 var login = require('./Controler/userDBControler');
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    console.log(req.query.btnRegister + "");
+    if (req.query.btnRegister) {
+        res.render("register", {title: "Register"})
+    }
     var isLogin = false;
     var message = "Wrong user or password!";
     var user = req.query.user;
