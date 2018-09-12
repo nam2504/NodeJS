@@ -1,23 +1,35 @@
 include layout
 block content
-    form(method='POST')
-        table(style='width:0%', border=0)
-            tr
-                th
-                    label Name:
-                th
-                    input#name.form-control(type='text', placeholder='your account' name='user' value=user)
-            tr
-                th
-                    label Password:
-                th
-                    input#pw.form-control(type='password' name='password')
-            tr
-                th(colspan=1)
-                    button.btn.btn-primary(type='submit' formaction="/login") Login
-                th(colspan=1)
-                    button.btn.btn-primary(type='submit' formaction="/register") Register
-            if (message)
+    .container
+        section#product
+            .container
+                ul.breadcrumb
+                    li
+                        a(href="#") Home
+                        span.divider
+                    li.active Shopping Cart
+                h1.heading1
+                    span.maintext Shopping Cart .
+                    span.subtext All items in your  Shopping Cart
+        form(method='POST')
+            table(style='width:0%', border=0)
                 tr
-                    th(colspan=2)
-                        p.red=message
+                    th
+                        label Name:
+                    th
+                        input#name.form-control(type='text', placeholder='your account' name='user' value=user)
+                tr
+                    th
+                        label Password:
+                    th
+                        input#pw.form-control(type='password' name='password')
+                tr
+                    th(colspan=1)
+                        button.btn.btn-primary(type='submit' formaction="/login") Login
+                    th(colspan=1)
+                        button.btn.btn-primary(type='submit' formaction="/register") Register
+                if (message)
+                    tr
+                        th(colspan=2)
+                            p.red=message
+    include footer

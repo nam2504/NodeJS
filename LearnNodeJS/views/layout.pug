@@ -1,7 +1,36 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/flexslider.css')
+        link(rel='stylesheet', href='/stylesheets/jquery.fancybox.css')
+        link(rel='stylesheet', href='/stylesheets/cloud-zoom.css')
+    body
+        header
+            div(class="headerstrip")
+                div(class="container")
+                    div(class="row")
+                        div(class="span12")
+                            a(href="/" class="logo pull-left")
+                                img(src="img/logo.png" alt="SimpleOne" title="SimpleOne")
+                            div(class="pull-left")
+                                div(class="navbar" id="topnav")
+                                    div(class="navbar-inner")
+                                        ul(class="nav")
+                                            li
+                                                a(class="home active" href="/") Home
+                                            li
+                                            li
+                                                a(class="shoppingcart" href="/") Shopping Cart
+
+
+            div(class="container")
+                div(id="categorymenu")
+                    nav(class="subnav")
+                        ul(class="nav-pills categorymenu")
+        // Content
+        block content
