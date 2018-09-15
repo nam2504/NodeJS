@@ -7,7 +7,7 @@ router.get('/', function (req, res, next) {
     var user = req.cookies.user;
     if (user === undefined || user === "") {
         console.log("[Index] render Login");
-        res.render('login', {title: "Login"})
+        res.redirect('login')
     } else {
         console.log("[Index] render Index");
         res.render('index', {title: 'Control Your Money', name: user})

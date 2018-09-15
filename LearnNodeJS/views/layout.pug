@@ -2,35 +2,83 @@ doctype html
 html
     head
         title= title
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        link(rel='stylesheet', href='/stylesheets/bootstrap.css')
-        link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css')
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        link(rel='stylesheet', href='/stylesheets/flexslider.css')
-        link(rel='stylesheet', href='/stylesheets/jquery.fancybox.css')
-        link(rel='stylesheet', href='/stylesheets/cloud-zoom.css')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        //meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+        block css
+            link(rel='stylesheet', href='/stylesheets/style.css')
+            link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+            link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css')
+            link(rel='stylesheet', href='/stylesheets/style.css')
+            link(rel='stylesheet', href='/stylesheets/flexslider.css')
+            link(rel='stylesheet', href='/stylesheets/jquery.fancybox.css')
+            link(rel='stylesheet', href='/stylesheets/cloud-zoom.css')
+        block script
     body
-        header
-            div(class="headerstrip")
+        block header
+            header
+                div(class="headerstrip")
+                    div(class="container")
+                        div(class="row")
+                            div(class="span12")
+                                a(href="/" class="logo pull-left")
+                                    img(src="img/logo.png" alt="SimpleOne" title="SimpleOne")
+                                div(class="pull-left")
+                                    div(class="navbar" id="topnav")
+                                        div(class="navbar-inner")
+                                            ul(class="nav")
+                                                li
+                                                    a(class="home active" href="/") Home
+                                                li
+                                                li
+                                                    a(class="shoppingcart" href="/") Shopping Cart
+
+
                 div(class="container")
-                    div(class="row")
-                        div(class="span12")
-                            a(href="/" class="logo pull-left")
-                                img(src="img/logo.png" alt="SimpleOne" title="SimpleOne")
-                            div(class="pull-left")
-                                div(class="navbar" id="topnav")
-                                    div(class="navbar-inner")
-                                        ul(class="nav")
-                                            li
-                                                a(class="home active" href="/") Home
-                                            li
-                                            li
-                                                a(class="shoppingcart" href="/") Shopping Cart
-
-
-            div(class="container")
-                div(id="categorymenu")
-                    nav(class="subnav")
-                        ul(class="nav-pills categorymenu")
+                    div(id="categorymenu")
+                        nav(class="subnav")
+                            ul(class="nav-pills categorymenu")
         // Content
         block content
+            H1 Test
+
+        //footer
+        block footer
+            footer(id="footer")
+                section(class="footersocial")
+                    div(class="container")
+                        div(class="row")
+                            div(class="span3 aboutus")
+                                h2 About Us
+                                p Hello
+                                br
+                                p Can I help you :))) ?
+                            div(class="span3 contact")
+                                h2 Contact Us
+                                ul
+                                    li(class="phone") Le Anh Nam
+                                    li(class="phone") 0169 234 2504
+                                    li(class="email") my_email@gmail.com
+                                    li(class="phone") VNG
+                            div(class="span3 contact")
+                                h2 FB : nam2504
+                section(class="footerlinks")
+                    div(class="container")
+                        div(class="info")
+                            ul
+                                - var footerlinks = ["Privacy Policy", "Terms Conditions", "Affiliates", "Newsletter", "Other"]
+                                each item in footerlinks
+                                    li
+                                        a(href="#")=item
+                        div(class="footersocial")
+                            - var footersocial = ["Facebook", "Twitter", "Linkedin", "rss", "Googleplus", "Skype", "Flickr"]
+                            each item in footersocial
+                                a(href="#" title=item class=item.toLowerCase())=item + " "
+
+                section(class="copyrightbottom")
+                    .container
+                        .row
+                            .span6
+                                p All images are copyright to their owners.
+                            div(class="span6 textright") ShopSimple
+                a#gotop(href="/") Back to top
+        //End footer
