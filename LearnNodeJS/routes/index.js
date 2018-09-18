@@ -9,9 +9,10 @@ router.get('/', function (req, res, next) {
         console.log("[Index] render Login");
         res.redirect('login')
     } else {
-        console.log("[Index] render Index");
-        res.render('index', {title: 'Control Your Money', name: user})
+        console.log("[Index] render Index user = " + user);
+        res.render('index', {title: 'Control Your Money', name: user});
     }
+    next;
 });
 
 module.exports = router;

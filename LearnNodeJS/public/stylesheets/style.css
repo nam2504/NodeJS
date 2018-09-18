@@ -9,7 +9,13 @@ body {
     padding: 0;
     background: url("../images/bg.gif") round;
 }
-
+/*label.container {*/
+    /*color: yellow;*/
+/*}*/
+/*p.container {*/
+    /*color: red;*/
+    /*font-size: 14px;*/
+/*}*/
 a {
     color: #96979d;
     text-decoration: none
