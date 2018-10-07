@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
         res.redirect('login')
     } else {
         console.log("[Index] render Index user = " + user);
-        res.render('index', {title: 'Control Your Money', name: user});
+        res.render('index', {title: 'Home', name: user});
     }
     next;
 });
